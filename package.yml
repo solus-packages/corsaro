@@ -1,0 +1,22 @@
+name       : corsaro
+version    : 2.1.0
+release    : 1
+source     :
+    - http://www.caida.org/tools/measurement/corsaro/downloads/corsaro-2.1.0.tar.gz : 3552b5b98b5ad79e7000ae8a0541d1bd9de7f9497635584c05bce40ae09d4457
+license    : GPL-2.0
+component  : programming
+summary    : Corsaro is a software suite for performing large-scale analysis of trace data.
+description: |
+    Corsaro is a software suite for performing large-scale analysis of 
+    trace data. It was specifically designed to be used with passive 
+    traces captured by darknets, but the overall structure is generic 
+    enough to be used with any type of passive trace data.
+builddeps  :
+    - libtrace-devel
+    - libwandio-devel
+setup      : |
+    %configure --disable-static
+build      : |
+    %make
+install    : |
+    %make_install
